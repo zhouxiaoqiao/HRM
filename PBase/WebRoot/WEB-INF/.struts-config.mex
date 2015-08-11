@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/employee/employeeRegist.do" location="50,50" dimension="316,100" />
+  <StrutsActivity path="/employee/writeParticulars.do" location="650,50" dimension="321,100" />
+  <StrutsActivity path="/employee/login.do" location="1250,50" dimension="311,100" />
+  <StrutsActivity path="/employee/findJobs.do" location="50,250" dimension="275,100" />
+  <StrutsActivity path="/employee/updateParticulars.do" location="650,250" dimension="326,100" />
+  <StrutsActivity path="/employee/post.do" location="1250,250" dimension="250,100" />
+  <StrutsActivity path="/employee/displayRecords.do" location="50,450" dimension="312,100" />
+  <StrutsActivity path="/employee/queryFirm.do" location="650,450" dimension="286,100" />
+  <StrutsActivity path="/firm/regist.do" location="1250,450" dimension="255,100" />
+  <StrutsActivity path="/firm/login.do" location="50,650" dimension="250,100" />
+  <StrutsActivity path="/firm/firmInfor.do" location="350,650" dimension="247,100" />
+  <StrutsActivity path="/firm/publishJobs.do" location="650,650" dimension="259,100" />
+  <StrutsActivity path="/firm/callInterview.do" location="1250,650" dimension="268,100" />
+  <StrutsActivity path="/firm/queryEmployee.do" location="50,850" dimension="283,100" />
+  <StrutsActivity path="/firm/exploreInfor.do" location="650,850" dimension="263,100" />
+  <StrutsActivity path="/employee/success.jsp" location="1250,850" dimension="164,52" />
+  <StrutsActivity path="/employee/sameNameErrors.jsp" location="50,1050" dimension="219,52" />
+  <StrutsActivity path="/errors.jsp" location="350,1050" dimension="95,52" />
+  <StrutsActivity path="/employee/displayInfor.jsp" location="650,1050" dimension="186,52" />
+  <StrutsActivity path="/form/registParticulars.jsp" location="975,1080" dimension="184,52" />
+  <StrutsActivity path="/employee/errors.jsp" location="1250,1050" dimension="155,52" />
+  <StrutsActivity path="/employee/findJobs.jsp" location="50,1250" dimension="166,52" />
+  <StrutsActivity path="/form/findJobs.jsp" location="350,1250" dimension="138,52" />
+  <StrutsActivity path="/form/updateParticulars.jsp" location="650,1250" dimension="191,52" />
+  <StrutsActivity path="/employee/fail-post.jsp" location="950,1250" dimension="166,52" />
+  <StrutsActivity path="/employee/successPost.jsp" location="1250,1250" dimension="188,52" />
+  <StrutsActivity path="/employee/displayRecords.jsp" location="50,1450" dimension="205,52" />
+  <StrutsActivity path="/employee/queryFirm.jsp" location="350,1450" dimension="178,52" />
+  <StrutsActivity path="/firm/success.jsp" location="650,1450" dimension="132,52" />
+  <StrutsActivity path="/firm/errors.jsp" location="950,1450" dimension="123,52" />
+  <StrutsActivity path="/firm/publishJobs.jsp" location="1250,1450" dimension="153,52" />
+  <StrutsActivity path="/form/publishJobs.jsp" location="50,1650" dimension="157,52" />
+  <StrutsActivity path="/firm/callInterview.jsp" location="350,1650" dimension="160,52" />
+  <StrutsActivity path="/firm/queryEmployee.jsp" location="650,1650" dimension="175,52" />
+  <StrutsActivity path="/firm/exploreInfor.jsp" location="950,1650" dimension="157,52" />
+  <StrutsTransition id="/employee/writeParticulars.do,registParticulars,/employee/displayInfor.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="666,383" />
+      <AbsolutePoint location="950,383" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/registParticulars.jsp,null,/employee/writeParticulars.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1117,1080" />
+      <AbsolutePoint location="1117,104" />
+      <AbsolutePoint location="971,104" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/post.do,post1,/employee/successPost.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1183" />
+      <AbsolutePoint location="1197,1183" />
+      <AbsolutePoint location="1197,679" />
+      <AbsolutePoint location="1260,679" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/findJobs.do,findErrors,/employee/errors.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1512,792" />
+      <AbsolutePoint location="1989,792" />
+      <AbsolutePoint location="1989,174" />
+      <AbsolutePoint location="1110,174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/queryEmployee.do,successDivide,/firm/queryEmployee.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1527,334" />
+      <AbsolutePoint location="1527,1074" />
+      <AbsolutePoint location="1483,1074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/findJobs.jsp,null,/employee/findJobs.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="135,1050" />
+      <AbsolutePoint location="135,1013" />
+      <AbsolutePoint location="1437,1013" />
+      <AbsolutePoint location="1437,834" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/login.do,loginErrors,/employee/errors.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="172,550" />
+      <AbsolutePoint location="172,513" />
+      <AbsolutePoint location="681,513" />
+      <AbsolutePoint location="681,153" />
+      <AbsolutePoint location="950,153" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/updateParticulars.jsp,null,/employee/updateParticulars.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,1083" />
+      <AbsolutePoint location="666,1083" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/regist.do,firmSuccess,/firm/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1057,634" />
+      <AbsolutePoint location="1057,679" />
+      <AbsolutePoint location="116,679" />
+      <AbsolutePoint location="116,765" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/employeeRegist.do,employeeSuccess,/employee/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,153" />
+      <AbsolutePoint location="216,153" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/publishJobs.do,successPublish,/firm/publishJobs.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="400,912" />
+      <AbsolutePoint location="733,912" />
+      <AbsolutePoint location="733,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/queryFirm.do,queryFirm,/employee/queryFirm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1685,1065" />
+      <AbsolutePoint location="1685,1038" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/regist.do,registErrors,/firm/errors.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1087,634" />
+      <AbsolutePoint location="1087,709" />
+      <AbsolutePoint location="503,709" />
+      <AbsolutePoint location="503,750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/errors.jsp,null,/firm/regist.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1056,74" />
+      <AbsolutePoint location="1173,74" />
+      <AbsolutePoint location="1173,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/exploreInfor.do,exploreInfor,/firm/exploreInfor.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1687,534" />
+      <AbsolutePoint location="1687,945" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/firmInfor.do,firmInfor,/firm/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="503,634" />
+      <AbsolutePoint location="503,649" />
+      <AbsolutePoint location="86,649" />
+      <AbsolutePoint location="86,765" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/publishJobs.jsp,null,/firm/publishJobs.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1027,950" />
+      <AbsolutePoint location="1027,882" />
+      <AbsolutePoint location="400,882" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/errors.jsp,null,/employee/employeeRegist.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,74" />
+      <AbsolutePoint location="831,74" />
+      <AbsolutePoint location="831,183" />
+      <AbsolutePoint location="648,183" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/displayRecords.do,displayRecords,/employee/displayRecords.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="660,1292" />
+      <AbsolutePoint location="885,1292" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/firmInfor.do,firmErrors,/firm/errors.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="473,634" />
+      <AbsolutePoint location="473,750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/updateParticulars.do,successUpdate,/employee/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="666,1053" />
+      <AbsolutePoint location="933,1053" />
+      <AbsolutePoint location="933,-25" />
+      <AbsolutePoint location="133,-25" />
+      <AbsolutePoint location="133,150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/errors.jsp,null,/firm/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="973,50" />
+      <AbsolutePoint location="973,5" />
+      <AbsolutePoint location="784,5" />
+      <AbsolutePoint location="784,750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/errors.jsp,null,/employee/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="973,50" />
+      <AbsolutePoint location="973,-175" />
+      <AbsolutePoint location="309,-175" />
+      <AbsolutePoint location="309,592" />
+      <AbsolutePoint location="294,592" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/post.do,fail-post,/employee/fail-post.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1500,1192" />
+      <AbsolutePoint location="1899,1192" />
+      <AbsolutePoint location="1899,474" />
+      <AbsolutePoint location="1428,474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/login.do,loginErrors,/firm/errors.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,783" />
+      <AbsolutePoint location="541,783" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/publishJobs.do,publishErrors,/firm/errors.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="260,870" />
+      <AbsolutePoint location="260,774" />
+      <AbsolutePoint location="405,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/login.do,errors,/errors.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="267,550" />
+      <AbsolutePoint location="267,-100" />
+      <AbsolutePoint location="1003,-100" />
+      <AbsolutePoint location="1003,50" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/updateParticulars.do,updateErrors,/employee/errors.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="633,1050" />
+      <AbsolutePoint location="633,595" />
+      <AbsolutePoint location="891,595" />
+      <AbsolutePoint location="891,183" />
+      <AbsolutePoint location="950,183" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/employeeRegist.do,error,/employee/sameNameErrors.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="648,213" />
+      <AbsolutePoint location="741,213" />
+      <AbsolutePoint location="741,474" />
+      <AbsolutePoint location="950,474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/login.do,employeeSuccess,/employee/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,592" />
+      <AbsolutePoint location="-25,592" />
+      <AbsolutePoint location="-25,174" />
+      <AbsolutePoint location="50,174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/callInterview.do,successInterview,/firm/callInterview.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="210,1180" />
+      <AbsolutePoint location="950,1180" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/firm/login.do,firmSuccess,/firm/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,828" />
+      <AbsolutePoint location="86,828" />
+      <AbsolutePoint location="86,813" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/employee/findJobs.do,findJobs,/employee/findJobs.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1381,834" />
+      <AbsolutePoint location="1381,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
