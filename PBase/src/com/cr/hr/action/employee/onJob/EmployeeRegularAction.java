@@ -121,24 +121,28 @@ public class EmployeeRegularAction extends BaseAction
 	 * @param response
 	 * @return
 	 */
-	public String update()
+	public String saveRegular()
 	{
-		logger.info("update");
+		logger.info("saveRegular");
 		HttpServletRequest request = ServletActionContext.getRequest();
 		try
 		{
 			setPageParm(request);
-
-			String sql = "update tab_employee set name='" + name + "',job='"
-					+ job + "',age='" + age + "',status='" + status
-					+ "',graduate_time='" + graduate_time + "',college='"
-					+ college + "',dept_id=" + dept_id + ",salary_month="
-					+ salary_month + ",join_time='" + join_time
-					+ "' where eid=" + eid;
-			if (ds.update(sql, null) > 0)
-			{
-				logger.info("更新成功！");
-			}
+			String status=request.getParameter("status");
+			String eid=request.getParameter("eid");
+			String regular_date=request.getParameter("regular_date");
+			String regular_inf=request.getParameter("regular_inf");
+			logger.info("更新成功！");
+//			String sql = "update tab_employee set name='" + name + "',job='"
+//					+ job + "',age='" + age + "',status='" + status
+//					+ "',graduate_time='" + graduate_time + "',college='"
+//					+ college + "',dept_id=" + dept_id + ",salary_month="
+//					+ salary_month + ",join_time='" + join_time
+//					+ "' where eid=" + eid;
+//			if (ds.update(sql, null) > 0)
+//			{
+//				logger.info("更新成功！");
+//			}
 		} catch (Exception e)
 		{
 			e.printStackTrace();
