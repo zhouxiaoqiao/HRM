@@ -1,4 +1,7 @@
- INSERT INTO `sec_menu` VALUES ('0', '人力资源系统', null, '0', 'javascript:void(0);', '人力资源系统', null, null, null, null, null, null, null, null, null);
+-- ----------------------------
+-- Records of sec_menu
+-- ----------------------------
+INSERT INTO `sec_menu` VALUES ('0', '人力资源系统', null, '0', 'javascript:void(0);', '人力资源系统', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('10', '系统管理', '0', '0', 'javascript:void(0);', '系统管理', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('11', '流程控制', '0', '0', 'javascript:void(0);', '流程控制', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('14', '数据与报表', '0', '0', 'javascript:void(0);', '数据与报表', null, null, null, null, null, null, null, null, null);
@@ -6,6 +9,7 @@ INSERT INTO `sec_menu` VALUES ('15', '测试15', '0', '0', 'javascript:void(0);'
 INSERT INTO `sec_menu` VALUES ('16', '人员管理', '0', '0', 'javascript:void(0);', '人员管理', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('17', '考勤管理', '0', '0', 'javascript:void(0);', '考勤管理', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('18', '薪资管理', '0', '0', 'javascript:void(0);', '薪资管理', '', '', null, null, '', '', '', '', null);
+INSERT INTO `sec_menu` VALUES ('19', '招聘管理', '0', '0', '#', '招聘管理', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('100', '用户管理', '10', '0', 'javascript:void(0); ', '用户管理', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('101', '部门管理', '10', '0', 'javascript:void(0); ', '部门管理', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('102', '菜单管理', '10', '0', 'javascript:void(0); ', '菜单管理', null, null, null, null, null, null, null, null, null);
@@ -44,8 +48,12 @@ INSERT INTO `sec_menu` VALUES ('182', '工资管理', '18', '0', '#', '工资管
 INSERT INTO `sec_menu` VALUES ('183', '月末处理', '18', '0', ' javascript:void(0);', '月末处理', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('184', '工资结构分析', '18', '0', 'javascript:void(0);', '工资结构分析', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('185', '基础设施', '18', '0', 'javascript:void(0);', '基础设施', '', '', null, null, '', '', '', '', null);
+INSERT INTO `sec_menu` VALUES ('190', '招聘查询', '19', '0', '#', '招聘查询', '', '', null, null, '', '', '', '', null);
+INSERT INTO `sec_menu` VALUES ('191', '招聘需求', '19', '0', '#', '招聘需求', '', '', null, null, '', '', '', '', null);
+INSERT INTO `sec_menu` VALUES ('192', '制定招聘计划', '19', '0', '#', '制定招聘计划', '', '', null, null, '', '', '', '', null);
+INSERT INTO `sec_menu` VALUES ('193', '收集应聘信息', '19', '0', '#', '收集应聘信息', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1000', '管理用户与角色', '100', '0', '/security/user', '管理用户与角色', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1001', '用户信息修改', '100', '0', '/sys_admin/edit_user.jsp', '用户信息修改', null, null, null, null, null, null, null, null, null);
+INSERT INTO `sec_menu` VALUES ('1001', '用户密码修改', '100', '0', '/sys_admin/edit_user.jsp', '用户密码修改', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1010', '树型部门管理', '101', '0', '/sys_admin/dept_main.jsp', '树型部门管理', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('1011', '二维部门管理', '101', '0', '/security/org', '二维部门管理', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('1012', '部门规划', '101', '0', '#', '部门规划', null, null, null, null, null, null, null, null, null);
@@ -63,14 +71,14 @@ INSERT INTO `sec_menu` VALUES ('1122', '表单管理', '112', '0', '/form/form',
 INSERT INTO `sec_menu` VALUES ('1123', '表单查询', '112', '0', '/form/form', '表单查询', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('1143', '角色管理', '114', '0', '/security/role', '角色管理', null, null, null, null, null, null, null, null, null);
 INSERT INTO `sec_menu` VALUES ('1145', '资源管理', '114', '0', '/security/resource', '资源管理', null, null, null, null, null, null, null, null, null);
-INSERT INTO `sec_menu` VALUES ('1610', '人员档案', '161', '0', '#', '人员档案', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1611', '人员转正', '161', '0', '#', '人员转正', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1612', '转正申请', '161', '0', '#', '转正申请', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1613', '转正记录', '161', '0', '#', '转正记录', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1614', '转正审核', '161', '0', '#', '转正审核', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1615', '批量更新', '161', '0', '#', '批量更新', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1616', '照片上传', '161', '0', '#', '照片上传', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1617', '档案导入', '161', '0', '#', '档案导入', '', '', null, null, '', '', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1610', '人员档案', '161', '0', '/employee_admin/on_job/employee_file.jsp', '人员档案', '', '', null, null, '', '/adminEmployee/employeeFile_', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1611', '人员转正', '161', '0', '/employee_admin/on_job/employee_regular.jsp', '人员转正', '', '', null, null, '', '/adminEmployee/employeeRegular_', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1612', '转正申请', '161', '0', '/employee_admin/on_job/regular_apply.jsp', '转正申请', '', '', null, null, '', '/adminEmployee/regularApply_', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1613', '转正记录', '161', '0', '/employee_admin/on_job/regular_record.jsp', '转正记录', '', '', null, null, '', '/adminEmployee/regularRecord_', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1614', '转正审核', '161', '0', '/employee_admin/on_job/regular_check.jsp', '转正审核', '', '', null, null, '', '/adminEmployee/regularCheck_', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1615', '批量更新', '161', '0', '/employee_admin/on_job/batch_record.jsp', '批量更新', '', '', null, null, '', '/adminEmployee/batchRecord_', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1616', '照片上传', '161', '0', '/employee_admin/on_job/employee_file.jsp', '照片上传', '', '', null, null, '', '/adminEmployee/employeeFile_', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1617', '档案导入', '161', '0', '/employee_admin/on_job/file_import.jsp', '档案导入', '', '', null, null, '', '/adminEmployee/fileImport_', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1620', '离职申请', '162', '0', '#', '离职申请', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1621', '离职审核', '162', '0', '#', '离职审核', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1622', '待离职人员', '162', '0', '#', '待离职人员', '', '', null, null, '', '', '', '', null);
@@ -166,52 +174,53 @@ INSERT INTO `sec_menu` VALUES ('1854', '节假日设定', '185', '0', '#', '节�
 INSERT INTO `sec_menu` VALUES ('1855', '加班规则转化', '185', '0', '#', '加班规则转化', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1856', '请假类别设置', '185', '0', '#', '请假类别设置', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1857', '薪酬分析', '185', '0', '#', '薪酬分析', '', '', null, null, '', '', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1930', '简历库管理', '193', '0', '#', '简历库管理', '', '', null, null, '', '', '', '', null);
+ 
+-- Records of sec_resource
+-- ----------------------------
+INSERT INTO `sec_resource` VALUES ('101', '待办任务', '/snaker/task/active', '1111');
+INSERT INTO `sec_resource` VALUES ('102', '流程实例', '/snaker/order', '1112');
+INSERT INTO `sec_resource` VALUES ('103', '历史任务', '/snaker/task/history', '1113');
+INSERT INTO `sec_resource` VALUES ('104', '流程定义', '/snaker/process/list', '1114');
+INSERT INTO `sec_resource` VALUES ('105', '流程部署', '/snaker/process/deploy/**;/snaker/process/add/**', null);
+INSERT INTO `sec_resource` VALUES ('106', '委托授权', '/snaker/surrogate/list', '1115');
+INSERT INTO `sec_resource` VALUES ('301', '字典查询', '/config/dictionary', '1121');
+INSERT INTO `sec_resource` VALUES ('302', '字典查看', '/config/dictionary/view/**', null);
+INSERT INTO `sec_resource` VALUES ('303', '字典编辑', '/config/dictionary/update/**;/config/dictionary/create/**', null);
+INSERT INTO `sec_resource` VALUES ('304', '字典删除', '/config/dictionary/delete/**', null);
+INSERT INTO `sec_resource` VALUES ('311', '表单查询', '/form/form', '1122');
+INSERT INTO `sec_resource` VALUES ('312', '表单查看', '/form/form/view/**', null);
+INSERT INTO `sec_resource` VALUES ('313', '表单编辑', '/form/form/update/**;/form/form/create/**', null);
+INSERT INTO `sec_resource` VALUES ('314', '表单删除', '/form/form/delete/**', null);
+INSERT INTO `sec_resource` VALUES ('321', '表查询', '/form/dbtable', '1123');
+INSERT INTO `sec_resource` VALUES ('322', '表查看', '/form/dbtable/view/**', null);
+INSERT INTO `sec_resource` VALUES ('323', '表编辑', '/form/dbtable/update/**;/form/dbtable/create/**', null);
+INSERT INTO `sec_resource` VALUES ('324', '表删除', '/form/dbtable/delete/**', null);
+INSERT INTO `sec_resource` VALUES ('401', '用户查询', '/security/user', '1000');
+INSERT INTO `sec_resource` VALUES ('402', '部门查询', '/security/org', '1011');
+INSERT INTO `sec_resource` VALUES ('403', '角色查询', '/security/role', '1143');
+INSERT INTO `sec_resource` VALUES ('404', '权限查询', '/security/authority', '109');
+INSERT INTO `sec_resource` VALUES ('405', '资源查询', '/security/resource', '1145');
+INSERT INTO `sec_resource` VALUES ('406', '菜单查询', '/security/menu', '1020');
+INSERT INTO `sec_resource` VALUES ('411', '用户查看', '/security/user/view/**', null);
+INSERT INTO `sec_resource` VALUES ('412', '部门查看', '/security/org/view/**', null);
+INSERT INTO `sec_resource` VALUES ('413', '角色查看', '/security/role/view/**', null);
+INSERT INTO `sec_resource` VALUES ('414', '权限查看', '/security/authority/view/**', null);
+INSERT INTO `sec_resource` VALUES ('415', '资源查看', '/security/resource/view/**', null);
+INSERT INTO `sec_resource` VALUES ('416', '菜单查看', '/security/menu/view/**', null);
+INSERT INTO `sec_resource` VALUES ('421', '用户删除', '/security/user/delete/**', null);
+INSERT INTO `sec_resource` VALUES ('422', '部门删除', '/security/org/delete/**', null);
+INSERT INTO `sec_resource` VALUES ('423', '角色删除', '/security/role/delete/**', null);
+INSERT INTO `sec_resource` VALUES ('424', '权限删除', '/security/authority/delete/**', null);
+INSERT INTO `sec_resource` VALUES ('425', '资源删除', '/security/resource/delete/**', null);
+INSERT INTO `sec_resource` VALUES ('426', '菜单删除', '/security/menu/delete/**', null);
+INSERT INTO `sec_resource` VALUES ('431', '用户编辑', '/security/user/update/**;/security/user/create/**', null);
+INSERT INTO `sec_resource` VALUES ('432', '部门编辑', '/security/org/update/**;/security/org/create/**', null);
+INSERT INTO `sec_resource` VALUES ('433', '角色编辑', '/security/role/update/**;/security/role/create/**', null);
+INSERT INTO `sec_resource` VALUES ('434', '权限编辑', '/security/authority/update/**;/security/authority/create/**', null);
+INSERT INTO `sec_resource` VALUES ('435', '资源编辑', '/security/resource/update/**;/security/resource/create/**', null);
+INSERT INTO `sec_resource` VALUES ('436', '菜单编辑', '/security/menu/update/**;/security/menu/create/**', null);
 
-
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (101, '待办任务', '/snaker/task/active', 1111);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (102, '流程实例', '/snaker/order', 1112);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (103, '历史任务', '/snaker/task/history', 1113);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (104, '流程定义', '/snaker/process/list', 1114);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (105, '流程部署', '/snaker/process/deploy/**;/snaker/process/add/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (106, '委托授权', '/snaker/surrogate/list', 1115);
-
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (301, '字典查询', '/config/dictionary', 1121);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (302, '字典查看', '/config/dictionary/view/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (303, '字典编辑', '/config/dictionary/update/**;/config/dictionary/create/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (304, '字典删除', '/config/dictionary/delete/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (311, '表单查询', '/form/form', 1122);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (312, '表单查看', '/form/form/view/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (313, '表单编辑', '/form/form/update/**;/form/form/create/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (314, '表单删除', '/form/form/delete/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (321, '表查询', '/form/dbtable', 1123);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (322, '表查看', '/form/dbtable/view/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (323, '表编辑', '/form/dbtable/update/**;/form/dbtable/create/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (324, '表删除', '/form/dbtable/delete/**', NULL);
-
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (401, '用户查询', '/security/user', 1000);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (402, '部门查询', '/security/org', 1011);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (403, '角色查询', '/security/role', 1143);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (404, '权限查询', '/security/authority', 109);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (405, '资源查询', '/security/resource', 1145);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (406, '菜单查询', '/security/menu', 1020);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (411, '用户查看', '/security/user/view/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (412, '部门查看', '/security/org/view/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (413, '角色查看', '/security/role/view/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (414, '权限查看', '/security/authority/view/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (415, '资源查看', '/security/resource/view/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (416, '菜单查看', '/security/menu/view/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (421, '用户删除', '/security/user/delete/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (422, '部门删除', '/security/org/delete/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (423, '角色删除', '/security/role/delete/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (424, '权限删除', '/security/authority/delete/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (425, '资源删除', '/security/resource/delete/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (426, '菜单删除', '/security/menu/delete/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (431, '用户编辑', '/security/user/update/**;/security/user/create/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (432, '部门编辑', '/security/org/update/**;/security/org/create/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (433, '角色编辑', '/security/role/update/**;/security/role/create/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (434, '权限编辑', '/security/authority/update/**;/security/authority/create/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (435, '资源编辑', '/security/resource/update/**;/security/resource/create/**', NULL);
-INSERT INTO sec_resource (ID, NAME, SOURCE, MENU) VALUES (436, '菜单编辑', '/security/menu/update/**;/security/menu/create/**', NULL);
 
 INSERT INTO sec_authority (ID, DESCRIPTION, NAME) VALUES (101, '待办任务', 'ACTIVETASK');
 INSERT INTO sec_authority (ID, DESCRIPTION, NAME) VALUES (102, '流程实例', 'ORDER');
