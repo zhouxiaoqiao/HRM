@@ -206,3 +206,30 @@ CREATE TABLE `tab_employee` (
   `address` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+CREATE TABLE `tab_advertise` (
+  `eid` bigint(20) NOT NULL,
+  `china_name` varchar(50) NOT NULL,
+  `age` bigint(3) DEFAULT NULL,
+  `college` varchar(50) DEFAULT NULL,
+  `work_history` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `interest` varchar(50) DEFAULT NULL,
+  `graduate_time` date DEFAULT NULL,
+  `professional` varchar(50) DEFAULT NULL,
+  `tel` varchar(50) DEFAULT NULL,
+  `born_date` date DEFAULT NULL,
+  `adver_way` varchar(50) DEFAULT NULL,
+  `interview_person` varchar(50) DEFAULT NULL,
+  `interview_date` date DEFAULT NULL,
+  `hope_salary` bigint(4) DEFAULT NULL,
+  `fact_salary` bigint(4) DEFAULT NULL,
+  `employ_status` varchar(50) DEFAULT NULL,
+  `qual_cert` varchar(255) DEFAULT NULL,
+  `sex` varchar(2) DEFAULT NULL,
+  `come_date` date DEFAULT NULL,
+  `interview_evaluate` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`eid`,`china_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+

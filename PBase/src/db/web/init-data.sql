@@ -51,7 +51,7 @@ INSERT INTO `sec_menu` VALUES ('185', '基础设施', '18', '0', 'javascript:voi
 INSERT INTO `sec_menu` VALUES ('190', '招聘查询', '19', '0', '#', '招聘查询', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('191', '招聘需求', '19', '0', '#', '招聘需求', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('192', '制定招聘计划', '19', '0', '#', '制定招聘计划', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('193', '收集应聘信息', '19', '0', '#', '收集应聘信息', '', '', null, null, '', '', '', '', null);
+INSERT INTO `sec_menu` VALUES ('193', '应聘者管理', '19', '0', '#', '应聘者管理', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1000', '管理用户与角色', '100', '0', '/security/user', '管理用户与角色', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1001', '用户密码修改', '100', '0', '/sys_admin/edit_user.jsp', '用户密码修改', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1010', '树型部门管理', '101', '0', '/sys_admin/dept_main.jsp', '树型部门管理', null, null, null, null, null, null, null, null, null);
@@ -173,9 +173,10 @@ INSERT INTO `sec_menu` VALUES ('1853', '流程定义', '185', '0', '#', '流程�
 INSERT INTO `sec_menu` VALUES ('1854', '节假日设定', '185', '0', '#', '节假日设定', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1855', '加班规则转化', '185', '0', '#', '加班规则转化', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1856', '请假类别设置', '185', '0', '#', '请假类别设置', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1857', '薪酬分析', '185', '0', '#', '薪酬分析', '', '', null, null, '', '', '', '', null);
-INSERT INTO `sec_menu` VALUES ('1930', '简历库管理', '193', '0', '#', '简历库管理', '', '', null, null, '', '', '', '', null);
- 
+INSERT INTO `sec_menu` VALUES ('1857', '薪酬分析', '185', '0', '/advertise_admin/collect_inf/display_interveiw.jsp', '薪酬分析', '', '', null, null, '', '', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1930', '收集应聘者信息', '193', '0', '/advertise_admin/collect_inf/display_interveiw.jsp', '收集应聘者信息', '', '', null, null, '', '/adminAdvetise/resumeAdmin_', '', '', null);
+INSERT INTO `sec_menu` VALUES ('1931', '录用与淘汰', '193', '0', '/advertise_admin/collect_inf/hire_fail.jsp', '录用与淘汰', '', '', null, null, '', '/adminAdvetise/resumeAdmin_', '', '', null);
+
 -- Records of sec_resource
 -- ----------------------------
 INSERT INTO `sec_resource` VALUES ('101', '待办任务', '/snaker/task/active', '1111');
