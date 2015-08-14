@@ -176,7 +176,7 @@ INSERT INTO `sec_menu` VALUES ('1856', '请假类别设置', '185', '0', '#', '�
 INSERT INTO `sec_menu` VALUES ('1857', '薪酬分析', '185', '0', '/advertise_admin/collect_inf/display_interveiw.jsp', '薪酬分析', '', '', null, null, '', '', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1930', '收集应聘者信息', '193', '0', '/advertise_admin/collect_inf/display_interveiw.jsp', '收集应聘者信息', '', '', null, null, '', '/adminAdvetise/resumeAdmin_', '', '', null);
 INSERT INTO `sec_menu` VALUES ('1931', '录用与淘汰', '193', '0', '/advertise_admin/collect_inf/hire_fail.jsp', '录用与淘汰', '', '', null, null, '', '/adminAdvetise/resumeAdmin_', '', '', null);
-
+ 
 -- Records of sec_resource
 -- ----------------------------
 INSERT INTO `sec_resource` VALUES ('101', '待办任务', '/snaker/task/active', '1111');

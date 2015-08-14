@@ -206,7 +206,7 @@ CREATE TABLE `tab_employee` (
   `address` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+ 
 CREATE TABLE `tab_advertise` (
   `eid` bigint(20) NOT NULL,
   `china_name` varchar(50) NOT NULL,
