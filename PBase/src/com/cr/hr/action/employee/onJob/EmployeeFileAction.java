@@ -6,7 +6,6 @@ package com.cr.hr.action.employee.onJob;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +18,8 @@ import org.moon.common.db.SQLTool;
 import org.moon.common.util.ChinaTransCode;
 import org.moon.s2sh.action.util.BaseAction;
 import org.moon.s2sh.service.GeneralService;
+
+import com.cr.util.KeyUtil;
 
 /**
  * <b>版权信息 :</b> 2012，云技术有限公司<br/>
@@ -96,7 +97,7 @@ public class EmployeeFileAction extends BaseAction
 		{
 			setPageParm(request);
 
-			long id = getLongID();
+			long id = KeyUtil.getLongID();
 			String sql = "INSERT  INTO tab_employee (eid,staff_name,user_account,job_name,age,status,join_time,college,graduate_time,dept_id,salary_month) VALUES ('"
 					+ id
 					+ "','"
@@ -328,19 +329,7 @@ public class EmployeeFileAction extends BaseAction
 		return "success";
 	}
 
-	/**
-	 * @return
-	 * @author 周小桥 |2015-8-7 上午11:25:48
-	 * @version 0.1
-	 */
-	private long getLongID()
-	{
-		Random random = new Random();
-		long id = System.currentTimeMillis() * 100 + Math.abs(random.nextInt())
-				% 100;
-		return id;
-	}
-
+	
 	/**
 	 * @param response
 	 * @param JSONObj
