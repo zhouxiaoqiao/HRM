@@ -39,8 +39,17 @@
 	<div id="tbdiv">
 		<form id="editForm" action="<%=pu.getUrl()%>" name="editForm"
 			method="post">
-			<table class="table_all" align="center" border="0" cellpadding="0"
+			 <table width="100%" border="0" align="center" cellpadding="0"
+					class="table_all_border" cellspacing="0" style="margin-bottom: 0px;border-bottom: 0px">
+				<tr>
+					<td class="td_table_top" align="center">
+						员工信息编辑
+					</td>
+				</tr>
+	     	</table>
+			<table  class="table_all" align="center" border="0" cellpadding="0"
 				cellspacing="0" style="margin-top: 0px">
+
 				<tr>
 					<td class="td_table_1">中文姓名</td>
 					<td class="td_table_2"><input type='text' name='staff_name'
@@ -51,7 +60,7 @@
 						id='user_account' /></td>
 					<td class="td_table_1">出生日期</td>
 					<td class="td_table_2"><input type='text' name='born_date'
-						id='born_date' onFocus="WdatePicker()"/></td>
+						id='born_date' onFocus="WdatePicker()" /></td>
 				</tr>
 				<tr>
 					<td class="td_table_1">入职年龄</td>
@@ -61,16 +70,16 @@
 					<td class="td_table_2"><input type='text' name='college'
 						id='college' value='' /></td>
 					<td class="td_table_1">毕业专业</td>
-					<td class="td_table_2"><input type='text'
-						name='professional' id='professional' value='' /></td>
+					<td class="td_table_2"><input type='text' name='professional'
+						id='professional' value='' /></td>
 				</tr>
 				<tr>
 					<td class="td_table_1">入职职务</td>
 					<td class="td_table_2"><input type='text' name='job_name'
 						id='job_name' value='' /></td>
 					<td class="td_table_1">工作年限</td>
-					<td class="td_table_2"><input type='text'
-						name='work_year' id='work_year' value='' /></td>
+					<td class="td_table_2"><input type='text' name='work_year'
+						id='work_year' value='' /></td>
 					<td class="td_table_1">入职时间</td>
 					<td class="td_table_2"><input type="text" name='join_time'
 						id='join_time' value='' onFocus="WdatePicker()" /></td>
@@ -84,13 +93,13 @@
 						id='dept_name' value='' onClick="selectDept()" /> <input
 						type='hidden' name='dept_id' id='dept_id' /></td>
 					<td class="td_table_1">员工状态</td>
-					<td class="td_table_2"><label>
-					  <select name="status" id="status">
-					    <option value="0">离职状态</option>
-					    <option value="1">在职状态</option>
-					    <option value="2">试用期</option>
-					    <option value="3">延长试用期</option>
-				      </select>
+					<td class="td_table_2"><label> <select name="status"
+							id="status">
+								<option value="0">离职状态</option>
+								<option value="1">正式在职</option>
+								<option value="2">试用期</option>
+								<option value="3">延长试用期</option>
+						</select>
 					</label></td>
 				</tr>
 				<tr>
@@ -107,10 +116,10 @@
 				<tr>
 					<td class="td_table_1">居住地址</td>
 					<td class="td_table_2"><input type="text" name='address'
-						id='address'  /></td>
+						id='address' /></td>
 					<td class="td_table_1">工作经验描述</td>
-					<td colspan="3" class="td_table_2"><textarea name="work_history" id="work_history"
-							cols="50"></textarea></td>
+					<td colspan="3" class="td_table_2"><textarea
+							name="work_history" id="work_history" cols="50"></textarea></td>
 
 				</tr>
 				<tr>
@@ -131,29 +140,50 @@
 <script type="text/javascript">
  if("<%=method%>"=="update"){
 	var data_ret; 
-      getDataByAjax("<%=getEditData_url%>", "initDataRet",data_ret);
+      getDataByAjax("<%=getEditData_url%>", "initDataRet", data_ret);
 
 	}
 
 	function initDataRet(data_ret) {
-		document.getElementById("eid").value = data_ret.eid; 
-		 document.getElementById("staff_name").value = data_ret.staff_name;
-		 document.getElementById("user_account").value = data_ret.user_account;
-		 document.getElementById("age").value = data_ret.age;
-		 document.getElementById("college").value = data_ret.college;
-		 document.getElementById("graduate_time").value = data_ret.graduate_time;
-		 document.getElementById("dept_name").value = data_ret.dept_name;
-		 document.getElementById("dept_id").value = data_ret.dept_id;
-		 document.getElementById("salary_month").value = data_ret.salary_month;
-		 
-		 document.getElementById("status").value = data_ret.status;
-		 document.getElementById("work_history").value = data_ret.work_history;
-		 document.getElementById("born_date").value = data_ret.born_date;
-		 document.getElementById("professional").value = data_ret.professional;
-		 document.getElementById("work_year").value = data_ret.work_year;
-		 document.getElementById("job_name").value = data_ret.job_name;
-		 document.getElementById("address").value = data_ret.address;
-		 
+		document.getElementById("eid").value = data_ret.eid;
+		document.getElementById("staff_name").value = data_ret.staff_name;
+		document.getElementById("user_account").value = data_ret.user_account;
+		document.getElementById("age").value = data_ret.age;
+		document.getElementById("college").value = data_ret.college;
+		document.getElementById("graduate_time").value = data_ret.graduate_time;
+		document.getElementById("dept_name").value = data_ret.dept_name;
+		document.getElementById("dept_id").value = data_ret.dept_id;
+		document.getElementById("salary_month").value = data_ret.salary_month;
+
+		document.getElementById("status").value = data_ret.status;
+		document.getElementById("work_history").value = data_ret.work_history;
+		document.getElementById("born_date").value = data_ret.born_date;
+		document.getElementById("professional").value = data_ret.professional;
+		document.getElementById("work_year").value = data_ret.work_year;
+		document.getElementById("job_name").value = data_ret.job_name;
+		document.getElementById("address").value = data_ret.address;
+
+	}
+
+	function clearWin() {
+
+		document.getElementById("staff_name").value = "";
+		document.getElementById("user_account").value = "";
+		document.getElementById("age").value = "";
+		document.getElementById("college").value = "";
+		document.getElementById("graduate_time").value = "";
+		document.getElementById("dept_name").value = "";
+		document.getElementById("dept_id").value = "";
+		document.getElementById("salary_month").value = "";
+
+		document.getElementById("status").value = "";
+		document.getElementById("work_history").value = "";
+		document.getElementById("born_date").value = "";
+		document.getElementById("professional").value = "";
+		document.getElementById("work_year").value = "";
+		document.getElementById("job_name").value = "";
+		document.getElementById("address").value = "";
+
 	}
 </script>
 </html>

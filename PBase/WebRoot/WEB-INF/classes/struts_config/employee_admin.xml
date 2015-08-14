@@ -18,7 +18,7 @@
 		</action>
 		<action name="employeeRegular_*"
 			class="com.cr.hr.action.employee.onJob.EmployeeRegularAction" method="{1}">
-			<result name="success">/employee_admin/on_job/employee_regular.jsp</result>
+			<result name="success">/employee_admin/on_job/employee_regular.jsp?action=/adminEmployee/employeeRegular_</result>
 			<result name="fail">/common/500.jsp</result>
 		</action>
 		<action name="fileImport_*"

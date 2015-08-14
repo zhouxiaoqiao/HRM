@@ -1,23 +1,30 @@
 <%@ page language="java" import="java.util.*,com.cr.util.PageUtil" pageEncoding="UTF-8"%>
-<%
-	
 
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme() + "://"
+		+ request.getServerName() + ":" + request.getServerPort()
+		+ path + "/";
 String action=(String)request.getParameter("action");
 PageUtil pu=new PageUtil(request,action);
+ 
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
 <base href="<%=pu.getBasePath()%>">
-<title>jquery demo</title>
+<title>员工转正</title>
 <%@include file="/main/use_js.jsp" %> 
+<link rel="stylesheet" href="<%=basePath%>/styles/css/style.css"
+	type="text/css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="<%=basePath%>/styles/wbox/wbox/wbox.css" />
 <style type="text/css">
 #pagerId input {
 	height: 20px;
 }
 </style>
-
 <script type="text/javascript">
 	var sql="<%=pu.getSql()%>"; 
 	var js_basePath='<%=pu.getBasePath()%>';
@@ -37,11 +44,11 @@ PageUtil pu=new PageUtil(request,action);
 			colNames:['序号','员工名','年龄','入职日期','毕业院校','职业状态','毕业时间','部门名','部门','薪资','工作经验'],
 			colModel:[						
 				{name:'eid',index:'rowindex',sortable:false,editable:false,width:30,hidden:true},				
-				{name:'name',index:'name',sortable:true,editable:true,width:30,editable:true,editoptions:{readonly:false,rows:"1",cols:"65"}},
+				{name:'staff_name',index:'staff_name',sortable:true,editable:true,width:30,editoptions:{readonly:false,rows:"1",cols:"65"}},
 				{name:'age',index:'age',sortable:true,editable:true,width:30},
 				{name:'join_time',index:'join_time',sortable:true,editable:true,width:30},
 				{name:'college',index:'college',sortable:true,editable:true,width:30},
-				{name:'status',index:'status',sortable:true,edittype:"select",formatter:'select',editoptions:{value:"1:在职;0:离职"},width:30},
+				{name:'status',index:'status',sortable:true,edittype:"select",editable:true,formatter:'select',editoptions:{value:"2:试用期;3:延长试用期"},width:30},
 				{name:'graduate_time',index:'graduate_time',sortable:true,width:30},			
 				{name:'dept_name',index:'dept_name',sortable:true,editable:true,width:30},
 				{name:'dept_id',index:'dept_id',sortable:true,editable:true,hidden:true},
@@ -63,8 +70,13 @@ PageUtil pu=new PageUtil(request,action);
 					rowNum : 15,
 					rowList : [ 10, 15, 20 ], //可调整每页显示的记录数 
 					multiselect : true,
-					onSelectRow : function(rowid, status) {
-						//onClickSel(rowid, status);
+					onSelectRow : function(rowid) {
+						
+						document.getElementById("editUnitDiv").style.visibility = "visible";
+						  var rowData = $("#dataTableId").getRowData(rowid);
+							$('#staff_name').attr('value', rowData.staff_name);
+							$('#eid').attr('value', rowData.rowid);
+
 					},
 					caption : "员工信息表"
 				});
@@ -73,141 +85,61 @@ PageUtil pu=new PageUtil(request,action);
 			del : false,
 			search : false,
 			edit : false
-		}), initOperate(add_display, edit_display, query_display, del_display,
-				print_display,"eid")
+		});
 	});
 </script>
 </head>
-<body onload="initUserWin()">
+<body>
+
 	<table id="dataTableId"></table>
 	<div id="pagerId" class="scroll"></div>
-	<input type="hidden" id="method" value="">
+	<input type="hidden" id="method" value="saveRegular">
 	<input type="hidden" id="printURL"
 		value="<%=pu.getBasePath()%>frameset?__report=report/design/emp.rptdesign&whereSQL=<%=pu.getWhereSQL_print()%>">
-	<div id="editUnitDiv" class="editWin" style="height: 300px;">
-		<div id="titeWin" class="ewTop" style="float: left;">
-			<span id="titeSpan">新 增</span>
-		</div>
-		<div style="float: left; width: 3%; height: 15px;background: #F0FFFF;"
-			onclick='closeWin(".editWin")'>
-			<img src="<%=pu.getBasePath()%>image/close.png" align="middle" />
-		</div>
-
-		<div id="tbdiv" class="ewContent" style="height: 280px;">
-			<div style="text-align: left;">
-				<br>
-				<form id="editForm" action="<%=pu.getUrl()%>"
-					name="editForm" method="post">
-
-					<table border="0" cellpadding="0" cellspacing="0">
-						<tr>
-							<td width="120" align="center"><input type="hidden" id="eid"
-								name='eid' value="" />员工姓名</td>
-							<td><input type='text' name='name' id='name' value='' /></td>
-						</tr>
-						<tr>
-							<td align="center">员工年龄</td>
-							<td><input type='text' name='age' id='age' value='' /></td>
-						</tr>
-						<tr>
-							<td align="center">入职时间</td>
-							<td><input type="text" name='join_time' id='join_time'
-								value='' onfocus="WdatePicker()" /></td>
-						</tr>
-						<tr>
-							<td align="center">毕业院校</td>
-							<td><input name='college' id='college' value='' /></td>
-						</tr>
-						<tr>
-							<td align="center">职业状态</td>
-							<td><select name="status" id="status" style="width:120px" size="1" ondblclick='getSelectAjax("status","status")'>							
-							</select><span>双击加载数据</span></td>
-						</tr>
-						<tr>
-							<td align="center">毕业时间</td>
-							<td><input type="text" name='graduate_time'
-								id='graduate_time' value='' onfocus="WdatePicker();" /></td>
-						</tr>
-						<tr>
-							<td  align="center">所属部门</td>
-							<td>	
-							<input type='text' name='dept_name' id='dept_name' value=''onclick="selectDept()"/>
-					        <input type='hidden' name='dept_id' id='dept_id' />
-					        </td>
-						</tr>
-						<tr>
-							<td align="center">每月薪资</td>
-							<td><input name='salary_month' id='salary_month' value='' /></td>
-						</tr>
-						<tr>
-							<td align="center">工作经验</td>
-							<td><textarea cols=40 rows=5 id="job" name="job"></textarea>
-							</td>
-						</tr>						
-						<tr>
-							<td align="center">上传照片</td>
-							<td><input type="file" id="problems_FJ3" name="problems_FJ3"
-								value="上传图片"></td>
-						</tr>
-					</table>
+	<div id="editUnitDiv"style="visibility: hidden">
+	<form id="editForm" action="<%=pu.getUrl()%>" name="editForm"
+			method="post">
+	 <table width="100%" border="0" align="center" cellpadding="0"
+				class="table_all_border" cellspacing="0" style="margin-bottom: 0px;border-bottom: 0px">
+			<tr>
+				<td class="td_table_top" align="center">
+					转正管理
+				</td>
+			</tr>
+		</table>
+		 <table   class="table_all" align="center" border="0" cellpadding="0"
+				cellspacing="0" style="margin-top: 0px">
+				<tr>
+					<td class="td_table_1">中文姓名</td>
+					<td class="td_table_2"><input type='text' name='staff_name'
+						id='staff_name' disabled /> <input type="hidden" id="eid" name='eid'
+						value="" /></td>
+					<td class="td_table_1">职员转正</td>
+					<td class="td_table_2"><select name="status"
+							id="status">
+								<option value="1">同意转正</option>
+								<option value="2">不同意转正</option>
+								<option value="3">延长试用期</option>
+						</select></td>
+					<td class="td_table_1">转正日期</td>
+					<td class="td_table_2"><input type='text' name='regular_date'
+						id='regular_date' onFocus="WdatePicker()"/></td>
+					<td class="td_table_1">转正说明</td>
+					<td class="td_table_2"><textarea
+							name="regular_inf" id="regular_inf" cols="50"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="8" class="td_table_2"><div align="center">
+							<input name="button" type='button' class="button_70px"
+								onclick='save("editForm")' value='转 正'> <input
+								name="button" type='button' class="button_70px"
+								onClick="clearWin();" value='清 除'> 
+						</div></td>
+				</tr>
+				</table>
 				</form>
-			</div>
-			<div style="text-align: center;">
-				<br> <input type='button' onclick='save("editForm")' style='width: 50px'
-					value='保存'> <input type='button' onclick="clearWin();"
-					style='width: 50px' value='清除'>
-
-			</div>
-		</div>
 	</div>
-	<div id="findDiv" class="findWin" style="height: 180px;">
-		<div id="tite_findWin" class="fwTop" style="float: left;">
-			<span id="titeSpan">查找</span>
-		</div>
-		<div style="float: left; width:5%; height: 15px;background: #F0FFFF;"
-			onclick='closeWin(".findWin")'>
-			<img src="<%=pu.getBasePath()%>image/close.png" align="middle" />
-		</div>
-		<div id="find_div" class="fwContent" style="height: 180px;">
-			<div style="text-align: left;">
-				<br>
-				<form id="findForm"
-					action="<%=pu.getUrl()%>doFind.action"
-					name="findForm" method="post">
-					<table border="0" cellpadding="0" cellspacing="0">
-						<tr>
-							<td width="80" align="center">毕业院校</td>
-							<td width="120"><input type='text' name='college_find'
-								id='college_find' value='' /></td>
-						</tr>
-						<tr>
-							<td align="center">职业状态</td>
-							<td width="120">
-							<select name="status_find" id="status_find" style="width:80px" size="1" ondblclick='getSelectAjax("status_find","status")'>							
-							</select><span>双击</span>
-							</td>
-						</tr>
-						<tr>
-							<td align="center">入职时间</td>
-							<td><input type="text" name='join_time_find'
-								id='join_time_find' value='' onfocus="WdatePicker()" /></td>
-						</tr>
-						<tr>
-							<td align="center">员工年龄</td>
-							<td><input type='text' name='age_find' id='age_find'
-								value='' /></td>
-						</tr>
-					</table>
-				</form>
-			</div>
-			<div style="text-align: center;">
-				<br> <input type='button' onclick="doFind()"
-					style='width: 50px' value='查找 '> <input type='button'
-					onclick="clearWin();" style='width: 50px' value='清除'>
-
-			</div>
-		</div>
-	</div>
+	 
 </body>
 <script type="text/javascript">
 ///需要修改的字段--扩展	
@@ -265,6 +197,8 @@ function doFind() {
 	submitFrom("findForm", url);
 
 }
+ 
+
 
 </script>
 </html>

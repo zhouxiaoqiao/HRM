@@ -1,6 +1,10 @@
 <%@ page language="java" import="java.util.*,com.cr.util.PageUtil" pageEncoding="UTF-8"%>
-<%
 
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme() + "://"
+		+ request.getServerName() + ":" + request.getServerPort()
+		+ path + "/";
 String action=(String)request.getParameter("action");
 PageUtil pu=new PageUtil(request,action);
  
@@ -10,14 +14,17 @@ PageUtil pu=new PageUtil(request,action);
 <html>
 <head>
 <base href="<%=pu.getBasePath()%>">
-<title>jquery demo</title>
+<title>员工转正</title>
 <%@include file="/main/use_js.jsp" %> 
+<link rel="stylesheet" href="<%=basePath%>/styles/css/style.css"
+	type="text/css" media="all" />
+<link rel="stylesheet" type="text/css"
+	href="<%=basePath%>/styles/wbox/wbox/wbox.css" />
 <style type="text/css">
 #pagerId input {
 	height: 20px;
 }
 </style>
-
 <script type="text/javascript">
 	var sql="<%=pu.getSql()%>"; 
 	var js_basePath='<%=pu.getBasePath()%>';
@@ -37,7 +44,7 @@ PageUtil pu=new PageUtil(request,action);
 			colNames:['序号','员工名','年龄','入职日期','毕业院校','职业状态','毕业时间','部门名','部门','薪资','工作经验'],
 			colModel:[						
 				{name:'eid',index:'rowindex',sortable:false,editable:false,width:30,hidden:true},				
-				{name:'name',index:'name',sortable:true,editable:true,width:30,editoptions:{readonly:false,rows:"1",cols:"65"}},
+				{name:'staff_name',index:'staff_name',sortable:true,editable:true,width:30,editoptions:{readonly:false,rows:"1",cols:"65"}},
 				{name:'age',index:'age',sortable:true,editable:true,width:30},
 				{name:'join_time',index:'join_time',sortable:true,editable:true,width:30},
 				{name:'college',index:'college',sortable:true,editable:true,width:30},
@@ -63,8 +70,13 @@ PageUtil pu=new PageUtil(request,action);
 					rowNum : 15,
 					rowList : [ 10, 15, 20 ], //可调整每页显示的记录数 
 					multiselect : true,
-					onSelectRow : function(rowid, status) {
-						//onClickSel(rowid, status);
+					onSelectRow : function(rowid) {
+						
+						document.getElementById("editUnitDiv").style.visibility = "visible";
+						  var rowData = $("#dataTableId").getRowData(rowid);
+							$('#staff_name').attr('value', rowData.staff_name);
+							$('#eid').attr('value', rowData.rowid);
+
 					},
 					caption : "员工信息表"
 				});
@@ -72,19 +84,60 @@ PageUtil pu=new PageUtil(request,action);
 			add : false,
 			del : false,
 			search : false,
-			edit : true
+			edit : false
 		});
 	});
 </script>
 </head>
-<body onload="initUserWin()">
+<body>
+
 	<table id="dataTableId"></table>
 	<div id="pagerId" class="scroll"></div>
-	<input type="hidden" id="method" value="">
+	<input type="hidden" id="method" value="saveRegular">
 	<input type="hidden" id="printURL"
 		value="<%=pu.getBasePath()%>frameset?__report=report/design/emp.rptdesign&whereSQL=<%=pu.getWhereSQL_print()%>">
-	<div id="editUnitDiv" class="editWin" style="height: 300px;">
-		 
+	<div id="editUnitDiv"style="visibility: hidden">
+	<form id="editForm" action="<%=pu.getUrl()%>" name="editForm"
+			method="post">
+	 <table width="100%" border="0" align="center" cellpadding="0"
+				class="table_all_border" cellspacing="0" style="margin-bottom: 0px;border-bottom: 0px">
+			<tr>
+				<td class="td_table_top" align="center">
+					转正管理
+				</td>
+			</tr>
+		</table>
+		 <table   class="table_all" align="center" border="0" cellpadding="0"
+				cellspacing="0" style="margin-top: 0px">
+				<tr>
+					<td class="td_table_1">中文姓名</td>
+					<td class="td_table_2"><input type='text' name='staff_name'
+						id='staff_name' disabled /> <input type="hidden" id="eid" name='eid'
+						value="" /></td>
+					<td class="td_table_1">职员转正</td>
+					<td class="td_table_2"><select name="status"
+							id="status">
+								<option value="1">同意转正</option>
+								<option value="2">不同意转正</option>
+								<option value="3">延长试用期</option>
+						</select></td>
+					<td class="td_table_1">转正日期</td>
+					<td class="td_table_2"><input type='text' name='regular_date'
+						id='regular_date' onFocus="WdatePicker()"/></td>
+					<td class="td_table_1">转正说明</td>
+					<td class="td_table_2"><textarea
+							name="regular_inf" id="regular_inf" cols="50"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="8" class="td_table_2"><div align="center">
+							<input name="button" type='button' class="button_70px"
+								onclick='save("editForm")' value='转 正'> <input
+								name="button" type='button' class="button_70px"
+								onClick="clearWin();" value='清 除'> 
+						</div></td>
+				</tr>
+				</table>
+				</form>
 	</div>
 	 
 </body>
@@ -144,6 +197,8 @@ function doFind() {
 	submitFrom("findForm", url);
 
 }
+ 
+
 
 </script>
 </html>
