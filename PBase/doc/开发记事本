@@ -1,3 +1,5 @@
+ eclipse开发环境不能识别 jsp,js,sql时 需安装插件
+   在Eclipse中菜单help选项中选择install new software选项， 在work with 栏中输入   http://download.eclipse.org/releases/ganymede/
 一.数据库地址配置乱码处理
 1.mysql乱码处理在mysql安装文件my.ini修改 2个位置
 default-character-set=utf8
@@ -62,14 +64,12 @@ default-character-set=utf8
 	   -Xrs
 	      加入 -Xms256m -Xmx512m 
 	      重起tomcat服务,设置生效
-
-
     
 六.自动初始化数据库
     注意:sec_menu表的最高父菜单需要将id=1690改成0
   
 七.导入   styles/uediter/jsp/lib文件下的jar包
-
+   
 八.参考系统
   帐号: ruvarxql  密码：xiao  
   地址:http://hrm.ruvar.com/ （建议IE浏览器登录）
